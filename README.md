@@ -1,4 +1,4 @@
-## Easy Peasy ENglish
+## Easy Peasy English
 This application offers courses to learn English.
 
 
