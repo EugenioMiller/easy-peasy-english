@@ -44,4 +44,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //Relation one to one
+    public function registers(){
+        return $this->hasOne('App\Models\Registration');
+    }
 }
