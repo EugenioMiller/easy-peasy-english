@@ -47,6 +47,6 @@ class User extends Authenticatable
 
     //Relation one to one
     public function registers(){
-        return $this->hasOne('App\Models\Registration');
+        return $this->belongsTo('App\Models\Registration');
     }
 }

@@ -11,7 +11,7 @@ class Registration extends Model
 
     //Relation one to one with user
     public function user(){
-        return $this->belongsTo('App\Models\User');
+        return $this->hasOne('App\Models\User');
     }
 
     //Relation one to many with courses

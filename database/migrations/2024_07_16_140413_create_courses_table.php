@@ -18,12 +18,12 @@ return new class extends Migration
             $table->text('content');
             $table->smallInteger('limit');
 
-            //FK levels -- one to one
+            //FK levels
             $table->unsignedBigInteger('level_id');
             $table->foreign('level_id')->references('id')->on('levels');
 
 
-            //FK divitions -- one to one
+            //FK divitions
             $table->unsignedBigInteger('divition_id');
             $table->foreign('divition_id')->references('id')->on('divitions');
 
