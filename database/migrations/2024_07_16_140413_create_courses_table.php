@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('start')->nulleable();
             $table->date('end')->nulleable();
             $table->smallInteger('limit');
+            $table->smallInteger('price');
 
             //FK levels
             $table->unsignedBigInteger('level_id');
