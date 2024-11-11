@@ -10,13 +10,13 @@
             <a class="nav-link" aria-current="page" href="#">Funlingo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sobre Nosotros</a>
+            <a class="nav-link" href="/about-us">Sobre Nosotros</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Cursos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Ingresar</a>
+            <a class="nav-link" href="/login">Ingresar</a>
           </li>
         </ul>
       </div>
