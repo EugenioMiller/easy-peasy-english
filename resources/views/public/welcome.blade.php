@@ -16,8 +16,8 @@
                 <x-slot name="end">{{ $course->end }}</x-slot>
                 <x-slot name="limit">{{ $course->limit }}</x-slot>
                 <x-slot name="price">{{ $course->price }}</x-slot>
-                <x-slot name="level">{{ $course->level_id }}</x-slot>
-                <x-slot name="divition">{{ $course->divition_id }}</x-slot>
+                <x-slot name="level">{{ $course->level_type }}</x-slot>
+                <x-slot name="divition">{{ $course->divition_description }}</x-slot>
             </x-card>
         @endforeach
     </div>

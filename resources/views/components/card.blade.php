@@ -4,6 +4,8 @@
         <div class="card-body text-primary">
             <h5 class="card-title text-center">{{ $description }}</h5>
             <p class="card-text text-center">{{ $content }}</p>
+            <p class="card-text text-center">{{ $level }}</p>
+            <p class="card-text text-center">{{ $divition }}</p>
             <div class="text-center">
                 <a href="#" class="btn btn-primary">Consulta inscripción</a>
             </div>

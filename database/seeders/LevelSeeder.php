@@ -13,27 +13,27 @@ class LevelSeeder extends Seeder {
     public function run(): void {
 
         $lvl = new Levels();
-        $lvl->description = 'Happy Starters';
+        $lvl->type = 'Happy Starters';
         $lvl->save();
 
         $lvl = new Levels();
-        $lvl->description = 'Cheerful Climbers';
+        $lvl->type = 'Cheerful Climbers';
         $lvl->save();
 
         $lvl = new Levels();
-        $lvl->description = 'Joyful Explorers';
+        $lvl->type = 'Joyful Explorers';
         $lvl->save();
 
         $lvl = new Levels();
-        $lvl->description = 'Sunny Adventurers';
+        $lvl->type = 'Sunny Adventurers';
         $lvl->save();
 
         $lvl = new Levels();
-        $lvl->description = 'Bright Builders';
+        $lvl->type = 'Bright Builders';
         $lvl->save();
 
         $lvl = new Levels();
-        $lvl->description = 'Shining Stars';
+        $lvl->type = 'Shining Stars';
         $lvl->save();
     }
 }
