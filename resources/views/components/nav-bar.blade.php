@@ -15,9 +15,17 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Cursos</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Ingresar</a>
-          </li>
+
+        @if(Auth::check())
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Cerrar sesión</a>
+            </li>
+        @else
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Ingresar</a>
+            </li>
+        @endif
+
         </ul>
       </div>
     </div>

@@ -32,8 +32,8 @@ class PublicController extends Controller {
         return view('public.about');
     }
 
-    public function showLogin(){
-        return view('public.login');
-    }
+    // public function showLogin(){
+    //     return view('public.login');
+    // }
 
 }
