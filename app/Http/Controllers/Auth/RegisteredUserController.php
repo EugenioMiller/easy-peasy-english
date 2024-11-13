@@ -12,14 +12,12 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
-class RegisteredUserController extends Controller
-{
+class RegisteredUserController extends Controller {
     /**
      * Display the registration view.
      */
-    public function create(): View
-    {
-        return view('auth.register');
+    public function create(): View {
+        return view('public.register');
     }
 
     /**
@@ -27,24 +25,29 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
-    {
+    public function store(Request $request): RedirectResponse {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'name'      => ['required', 'string', 'max:50'],
+            'surname'   => ['required', 'string', 'max:50'],
+            'email'     => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'password'  => ['required', 'confirmed', Rules\Password::defaults()],
+            'phone'     => ['required', 'string', 'min:8', 'max:25'],
         ]);
 
         $user = User::create([
             'name' => $request->name,
+            'surname' => $request->surname,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'phone' => $request->phone,
+            'birthday' => $request->birthday,
+            'is_admin' => $request->is_admin,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect('/');
     }
 }

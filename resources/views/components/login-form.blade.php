@@ -39,9 +39,5 @@
             </div>
             <button type="submit" class="btn btn-primary mt-5">Acceder</button>
         </form>
-    <div class="form-container">
-      <form>
-        <!-- form fields -->
-      </form>
-    </div></div>
+    </div>
 </div>
