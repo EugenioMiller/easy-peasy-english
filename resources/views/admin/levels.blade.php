@@ -22,7 +22,7 @@
                   <th scope="row">{{$level->type}}</th>
                   <td><a href="/edit-level/{{$level->id}}"><button class="btn btn-warning">Editar</button></a></td>
                   <td>
-                    <form class="d-inline" action="/eliminate-level/{{$level->id}}" method="post">
+                    <form class="d-inline" action="/-level/{{$level->id}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger">Eliminar</button>

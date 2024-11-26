@@ -6,6 +6,13 @@
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
+
+            @if(Auth::check() && Auth::user()->is_admin == 1)
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/admin">Administración</a>
+            </li>
+            @endif
+
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">Funlingo</a>
           </li>

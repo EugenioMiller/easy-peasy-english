@@ -5,7 +5,7 @@
 <div class="container">
     <h1 class="text-center">Editar división</h1>
 
-    <form action="/edit-divition/{{$divition->id}}" method="post">
+    <form action="/divition/{{$divition->id}}" method="post">
         @csrf
         @method('PUT')
 

@@ -22,7 +22,7 @@
                   <th scope="row">{{$divition->description}}</th>
                   <td><a href="/edit-divition/{{$divition->id}}"><button class="btn btn-warning">Editar</button></a></td>
                   <td>
-                    <form class="d-inline" action="/eliminate-divition/{{$divition->id}}" method="post">
+                    <form class="d-inline" action="/divition/{{$divition->id}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger">Eliminar</button>

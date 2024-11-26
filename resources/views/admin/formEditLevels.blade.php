@@ -5,7 +5,7 @@
 <div class="container">
     <h1 class="text-center">Editar nivel</h1>
 
-    <form action="/edit-level/{{$level->id}}" method="post">
+    <form action="/level/{{$level->id}}" method="post">
         @csrf
         @method('PUT')
 
