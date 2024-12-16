@@ -6,6 +6,7 @@
     <div class="container p-0 pb-0">
       <!-- Section: Social media -->
       <section class="mb-4">
+
         <!-- Facebook -->
         <a
           class="btn btn-primary btn-floating m-1"
@@ -46,6 +47,10 @@
     </div>
     <!-- Copyright -->
   </footer>
-
   </div>
   <!-- End of .container -->
+
+  <script src="{{URL::asset('js/app.js')}}"></script>
+
+</body>
+</html>

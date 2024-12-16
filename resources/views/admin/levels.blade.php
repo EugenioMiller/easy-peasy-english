@@ -22,7 +22,7 @@
                   <th scope="row">{{$level->type}}</th>
                   <td><a href="/edit-level/{{$level->id}}"><button class="btn btn-warning">Editar</button></a></td>
                   <td>
-                    <form class="d-inline" action="/-level/{{$level->id}}" method="post">
+                    <form class="d-inline" action="/level/{{$level->id}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger">Eliminar</button>
@@ -34,9 +34,32 @@
         </table>
     </ul>
 
-    <button class="btn btn-primary mt-5"><a href="/admin-level" class="text-white text-decoration-none">+Agregar nuevo nivel</a></button>
+    <button data-bs-toggle="modal" data-bs-target="#modalCreateLevel" class="btn btn-primary mt-5">+Agregar nuevo nivel</button>
 
 </div>
+
+
+<!-- Start Modal Crete Divition -->
+
+<div class="modal" tabindex="-1" id="modalCreateLevel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Agregar un nuevo nivel</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <x-formLevels></x-formLevels>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" form="formAddLevel" class="btn btn-primary">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- End Modal Crete Divition -->
 
 <x-footer></x-footer>
 

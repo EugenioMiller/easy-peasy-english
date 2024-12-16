@@ -18,7 +18,6 @@ class UserSeeder extends Seeder {
         $user->email = 'easypeasy_educ@gmail.com';
         $user->password = bcrypt('maguita');
         $user->phone = '+522282558077';
-        $user->birthday = date('Y-m-d', strtotime('1994-08-23'));
         $user->is_admin = true;
         $user->save();
     }

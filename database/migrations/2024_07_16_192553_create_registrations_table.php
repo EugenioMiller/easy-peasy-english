@@ -22,6 +22,10 @@ return new class extends Migration
             $table->unsignedBigInteger('course_id');
             $table->foreign('course_id')->references('id')->on('courses');
 
+            $table->string('student_name', 30);
+            $table->string('student_surname', 50);
+            $table->date('student_birthday');
+
 
             $table->timestamps();
         });
