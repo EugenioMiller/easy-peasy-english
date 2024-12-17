@@ -1,27 +1,31 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DivitionController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\UserController;
 
 
 #           endpoints                       controllers                         methods
-#Public
+
+#------------------------------------------ Public ------------------------------------------
 Route::get('/',                             [PublicController::class,           'index']);
 Route::get('/about-us',                     [PublicController::class,           'about']);
 
-#Admin
+#------------------------------------------ End Public ------------------------------------------
+
+#------------------------------------------ Admin ------------------------------------------
 #GET
 Route::get('/admin',                        [AdminController::class,            'showAdmin'])->middleware('admin');
 Route::get('/registers',                    [AdminController::class,            'newRegister'])->middleware('admin');
 Route::get('/user-search',                  [AdminController::class,            'searchUser'])->middleware('admin');
 
-Route::get('/new-register/{id}',           [RegistrationController::class,     'create'])->middleware('admin');
+Route::get('/new-register/{id}',            [RegistrationController::class,     'create'])->middleware('admin');
 
 Route::get('/divitions',                    [DivitionController::class,         'index'])->middleware('admin');
 Route::get('/admin-divitions',              [DivitionController::class,         'create'])->middleware('admin');
@@ -50,5 +54,14 @@ Route::post('/divitions',                   [DivitionController::class,         
 Route::post('/levels',                      [LevelController::class,            'store'])->middleware('admin');
 Route::post('/courses',                     [CourseController::class,           'store'])->middleware('admin');
 Route::post('/registration',                [RegistrationController::class,     'store'])->middleware('admin');
+
+#------------------------------------------ End Admin ------------------------------------------
+
+#------------------------------------------ User -----------------------------------------------
+
+Route::get('/my-courses',                   [UserController::class,             'showCourses'])->middleware('user');
+#------------------------------------------ End User ---------------------------------------------
+
+
 
 require __DIR__.'/auth.php';

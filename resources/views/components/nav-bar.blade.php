@@ -13,6 +13,12 @@
             </li>
             @endif
 
+            @if(Auth::check() && Auth::user()->is_admin != 1)
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/my-courses">Mis cursos</a>
+            </li>
+            @endif
+
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">Funlingo</a>
           </li>
