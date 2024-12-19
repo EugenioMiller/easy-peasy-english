@@ -36,4 +36,16 @@ class RegistrationController extends Controller {
 
         return redirect('/admin');
     }
+
+    public function showRegisters($id) {
+
+        $registers = Registration::join('courses', 'registrations.course_id', '=', 'courses.id')
+                                ->where('course_id', $id)
+                                ->select('courses.*', 'registrations.*')
+                                ->get();
+
+        $count = Registration::where('course_id', $id)->count();
+
+        return view('admin.registers', compact('registers', 'count'));
+    }
 }

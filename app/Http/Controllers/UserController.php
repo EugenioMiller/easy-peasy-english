@@ -15,7 +15,7 @@ class UserController extends Controller {
                     ->join('levels', 'courses.level_id', '=', 'levels.id')
                     ->join('divitions', 'courses.divition_id', '=', 'divitions.id')
                     ->where('registrations.user_id', '=', $id)
-                    ->select('registrations.*', 'levels.type as level', 'divitions.description as divition')
+                    ->select('registrations.*', 'levels.type as level', 'divitions.description as divition', 'courses.name as course')
                     ->get();
 
         return view('user.personalCourses', compact('courses'));

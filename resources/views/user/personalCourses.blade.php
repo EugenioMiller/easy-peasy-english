@@ -2,37 +2,47 @@
 
 <x-nav-bar></x-nav-bar>
 
-    <div class="container">
-        <h1 class="h1 m-3">Lista de cursos inscriptos</h1>
+    @if (!$courses->isEmpty())
 
-        @foreach ($courses as $course)
+        <div class="container">
+            <h1 class="h1 m-3">Lista de cursos inscriptos</h1>
 
-        <table class="table table-success mt-2">
-            <thead>
-                <tr>
-                  <th scope="col">Nombre de estudiante</th>
-                  <th scope="col">Apellido de estudiante</th>
-                  <th scope="col">Fecha de nacimiento</th>
-                  <th scope="col">Curso</th>
-                  <th scope="col">Nivel</th>
-                  <th scope="col">División</th>
-                </tr>
-            </thead>
+            @foreach ($courses as $course)
 
-            <tbody>
-                <tr>
-                  <th>{{ $course->student_name }}</th>
-                  <td>{{ $course->student_surname }}</td>
-                  <td>{{ $course->student_birthday }}</td>
-                  <td>{{ $course->course_id }}</td>
-                  <td>{{ $course->level }}</td>
-                  <td>{{ $course->divition }}</td>
-                </tr>
-            </tbody>
+            <table class="table table-success mt-2">
+                <thead>
+                    <tr>
+                    <th scope="col">Nombre de estudiante</th>
+                    <th scope="col">Apellido de estudiante</th>
+                    <th scope="col">Fecha de nacimiento</th>
+                    <th scope="col">Curso</th>
+                    <th scope="col">Nivel</th>
+                    <th scope="col">División</th>
+                    </tr>
+                </thead>
 
-        </table>
-        @endforeach
-    </div>
+                <tbody>
+                    <tr>
+                    <th>{{ $course->student_name }}</th>
+                    <td>{{ $course->student_surname }}</td>
+                    <td>{{ $course->student_birthday }}</td>
+                    <td>{{ $course->course }}</td>
+                    <td>{{ $course->level }}</td>
+                    <td>{{ $course->divition }}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+            @endforeach
+        </div>
+
+    @else
+        <div class="container mt-5">
+            <div class="alert alert-danger" role="alert">
+                Aún no se ha inscripto a ningun curso.
+            </div>
+        </div>
+    @endif
 
 <x-footer></x-footer>
 

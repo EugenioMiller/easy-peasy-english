@@ -38,6 +38,7 @@
                         <button class="btn btn-danger">Eliminar</button>
                     </form>
                   </td>
+                  <td><a href="/info/{{$course->id}}"><button class="btn btn-success">Info</button></a></td>
                 </tr>
             </tbody>
             @endforeach

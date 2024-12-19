@@ -26,6 +26,7 @@ Route::get('/registers',                    [AdminController::class,            
 Route::get('/user-search',                  [AdminController::class,            'searchUser'])->middleware('admin');
 
 Route::get('/new-register/{id}',            [RegistrationController::class,     'create'])->middleware('admin');
+Route::get('/info/{id}',                    [RegistrationController::class,     'showRegisters'])->middleware('admin');
 
 Route::get('/divitions',                    [DivitionController::class,         'index'])->middleware('admin');
 Route::get('/admin-divitions',              [DivitionController::class,         'create'])->middleware('admin');
@@ -60,6 +61,7 @@ Route::post('/registration',                [RegistrationController::class,     
 #------------------------------------------ User -----------------------------------------------
 
 Route::get('/my-courses',                   [UserController::class,             'showCourses'])->middleware('user');
+
 #------------------------------------------ End User ---------------------------------------------
 
 
